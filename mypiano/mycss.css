@@ -1,9 +1,9 @@
-body{
+body {
     margin-top: 2px;
     margin-bottom: 0px;
     margin-left: 3px;
-    width:1688px;
-    height:824px;
+    width: 1688px;
+    height: 824px;
     border: 5px dashed palevioletred;
     border-radius: 10px;
     -webkit-border-radius: 10px;
@@ -11,6 +11,7 @@ body{
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
 }
+
 .whole {
     width: 1680px;
     height: 800px;
@@ -46,6 +47,7 @@ body{
     z-index: 100;
 
 }
+
 /* 5 */
 /* 426 847 1268 */
 /* 0,75,145,181,250,320,390 */
@@ -79,4 +81,47 @@ body{
     margin-top: 5px;
     margin-bottom: 5px;
     z-index: -1;
+}
+
+.inputP {
+    position: absolute;
+    top: 30px;
+    left: 560px;
+    justify-items: center;
+    align-items: center;
+    display: flex;
+}
+
+input {
+    outline-style: none;
+    /* background-color:rgb(175, 179, 180); */
+    border: 1px solid #7eb7f3;
+    border-radius: 10px;
+    padding: 8px;
+    width: 600px;
+    font-size: 14px;
+}
+
+input:focus {
+    border-color: #66afe9;
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6)
+}
+
+button {
+    height: 25px;
+    width: 50px;
+    margin-left: 5px;
+    border-radius: 5px;
+}
+
+.speed {
+    background-color: rgb(200, 200, 200);
+    height: 20px;
+    width: 50px;
+    margin-left: 5px;
+    border-radius: 5px;
+    border: 2px solid black;
+    text-align: center;
 }

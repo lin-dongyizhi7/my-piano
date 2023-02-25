@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>my piano</title>
+    <title>lin dong yi zhi 's piano</title>
     <link rel="stylesheet" href="./mycss.css">
     
 </head>
@@ -21,6 +21,15 @@
     <!-- <div style="margin-left: 390px;background-color: rgb(57, 201, 22);width: 200px;height: 800px;position: fixed;"></div> -->
     <div id="cl" class="whole">
         <!-- - -->
+        <div class="inputP">
+            <input id="myIn" maxlength="200" type="text" placeholder="如果需要，请输入简谱(数字+-或者键盘位置)，分别使用play1和play2："  onfocus="myFocus()"  oninput="getP(this)" />
+            <button onClick="clickHandle1()">play1</button>
+            <button onClick="clickHandle2()">play2</button>
+            <button onClick="clickHandle3()">&lt&lt</button>
+            <div id="speed" class="speed">1</div>
+            <button onClick="clickHandle4()">&gt&gt</button>
+        </div>
+        <script type="text/javascript" src="./myJS/autoplayer.js"></script>
         <div id="main" class="keyBoard">
             <div class="whiteB">
                 <p class="keyName">Z</p>
