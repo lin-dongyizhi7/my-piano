@@ -1,0 +1,82 @@
+body{
+    margin-top: 2px;
+    margin-bottom: 0px;
+    margin-left: 3px;
+    width:1688px;
+    height:824px;
+    border: 5px dashed palevioletred;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.whole {
+    width: 1680px;
+    height: 800px;
+    background-image: url("./kq_qq.jpg");
+    background-size: cover;
+    opacity: 0.4;
+    display: flex;
+    align-items: flex-end;
+    justify-items: center;
+    border: 5px solid;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.keyBoard {
+    width: calc();
+    height: calc();
+    display: flex;
+    align-items: flex-end;
+    justify-items: center;
+    border-top: 5px solid;
+}
+
+.blackB {
+    width: 32px;
+    height: 200px;
+    background-color: #000;
+    border: 1px solid black;
+    box-shadow: 0 0 2px 2px gainsboro;
+    z-index: 100;
+
+}
+/* 5 */
+/* 426 847 1268 */
+/* 0,75,145,181,250,320,390 */
+.whiteB {
+    width: 35px;
+    height: 200px;
+    background-color: #fff;
+    border: 1px solid black;
+    box-shadow: 0 0 2px 2px gray;
+    z-index: 90;
+
+}
+
+.keyName {
+    text-align: center;
+}
+
+.pictures {
+    width: 1680px;
+    height: 600px;
+    position: absolute;
+    top: 0;
+}
+
+#cw {
+    position: absolute;
+    width: 1680px;
+    height: 800px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    z-index: -1;
+}
