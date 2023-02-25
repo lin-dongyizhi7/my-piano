@@ -23,13 +23,12 @@
         <!-- - -->
         <div class="inputP">
             <input id="myIn" maxlength="200" type="text" placeholder="如果需要，请输入简谱(数字+-或者键盘位置)，分别使用play1和play2："  onfocus="myFocus()"  oninput="getP(this)" />
-            <button onClick="clickHandle1()">play1</button>
-            <button onClick="clickHandle2()">play2</button>
-            <button onClick="clickHandle3()">&lt&lt</button>
+            <button id="b1" onClick="clickHandle1()" style="cursor: pointer;">play1</button>
+            <button id="b2" onClick="clickHandle2()" style="cursor: pointer;">play2</button>
+            <button id="b3" onClick="clickHandle3()" style="cursor: pointer;">&lt&lt</button>
             <div id="speed" class="speed">1</div>
-            <button onClick="clickHandle4()">&gt&gt</button>
+            <button id="b4" onClick="clickHandle4()" style="cursor: pointer;">&gt&gt</button>
         </div>
-        <script type="text/javascript" src="./myJS/autoplayer.js"></script>
         <div id="main" class="keyBoard">
             <div class="whiteB">
                 <p class="keyName">Z</p>
@@ -180,6 +179,8 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="./myJS/autoplayer.js"></script>
+    <script type="text/javascript" src="./myJS/pointerShape.js"></script>
     <script type="text/javascript" src="./myJS/getKey.js"></script>
 </body>
 
