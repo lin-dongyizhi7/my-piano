@@ -1,6 +1,7 @@
 var p;
 function getP(obj) {
     //obj.value = obj.value.replace(/[\W]/g, "");
+    obj.value = obj.value.replace(/[8-90kKlLiIoOpP`~!@#$%^&*()_=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）={}|《》？：“”【】、；‘'，。、]/g,"");
     p = obj.value;
 }
 

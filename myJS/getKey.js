@@ -8,6 +8,7 @@ var charKey = [
 var block0 = [0, 420, 840, 1260];
 var block1 = [0, 68, 137, 173, 243, 313, 383];
 var flag = 1;
+let down = new Array(28).fill(false);
 
 // var cl = document.querySelector(".keyBoard");
 // console.log(cl);
@@ -16,12 +17,22 @@ function myFocus() {
     flag = 0;
 }
 
-function keyboard(event) {
+function keyboardD(event) {
     let keycode = event.keyCode;
     var num = charKey.indexOf(keycode);
     //alert(num);
     if (num < 0 || flag == 0) return;
-    playing(num);
+    if (down[num] == false) {
+        console.log(num);
+        playing(num);
+        down[num] = true;
+    }
+}
+
+function keyboardU(event) {
+    let keycode = event.keyCode;
+    var num = charKey.indexOf(keycode);
+    down[num] = false;
 }
 
 function draw(x, y) {
@@ -83,5 +94,6 @@ function mouseClick(event) {
     // anim();
 }
 
-document.addEventListener("keydown", keyboard);
+document.addEventListener("keydown", keyboardD);
 document.addEventListener("click", mouseClick);
+document.addEventListener("keyup", keyboardU);
