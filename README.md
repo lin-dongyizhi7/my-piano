@@ -1,7 +1,21 @@
 # my-piano
 
 ### a web piano
+
 一个网页钢琴
+
+
+
+Clicking on the bottom half of the screen at the beginning will play the music of pv-background-music of Kamisato Ayaka. Click pause again. The "+" and "-" buttons on the right can adjust the volume, starting with the maximum volume.
+
+开始时点击屏幕下半部分会播放音乐《白鹭归庭》，再次点击暂停。右侧“+”“-”按钮可以调节音量，开始时为最大音量。
+
+
+You can use browser zoom to resize the page.
+
+你可以使用浏览器缩放将页面调节至合大小。
+
+
 
 You can use your computer keyboard as show in the web to play.
 
