@@ -5,8 +5,8 @@ var charKey = [
     49, 50, 51, 52, 53, 54, 55
 ];
 
-var block0 = [0, 422, 842, 1263];
-var block1 = [0, 70, 140, 176, 246, 316, 386];
+var block0 = [0, 420, 840, 1260];
+var block1 = [0, 68, 137, 173, 243, 313, 383];
 var flag = 1;
 
 // var cl = document.querySelector(".keyBoard");
@@ -48,7 +48,7 @@ function playing(num) {
     //console.log(q);
     //console.log(l);
     c.fillStyle = "rgba(51,201,22,1)";
-    c.fillRect(l, 600, 34, 202);
+    c.fillRect(l, 600, 34, 204);
 
     var n = num + 1;
     var mp3url = "./audios/" + n + ".mp3";
