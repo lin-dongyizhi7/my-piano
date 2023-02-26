@@ -1,7 +1,7 @@
 var p;
 function getP(obj) {
     //obj.value = obj.value.replace(/[\W]/g, "");
-    obj.value = obj.value.replace(/[8-90kKlLiIoOpP`~!@#$%^&*()_=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）={}|《》？：“”【】、；‘'，。、]/g, "");
+    obj.value = obj.value.replace(/[8-90kKlLiIoOpP`~!@#$%^&*_=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）={}|《》？：“”【】、；‘'，。、]/g, "");
     obj.value = obj.value.toLowerCase();
     p = obj.value;
 }
@@ -17,12 +17,22 @@ var rTimes = 0;
 var s = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8, 1, 1.25, 1.5, 1.75, 2, 3, 4, 5, 10, 16];//normal at pos 7
 var musics = [];
 var filePath = "../music/";
+var playMusic = false;
 
+if (playMusic == true) {
+    play2();
+}
 
-function clickHandle1() {
+function playingN(c) {
+    var n = kv.indexOf(c);
+    if (n >= 0) {
+        playing(n);
+    }
+}
+
+function play1() {
     var tune = p;
     //console.log(tune);
-    document.getElementById("myIn").value = "";
     var i = 0;
     timeCount = setInterval(
         function () {
@@ -42,9 +52,7 @@ function clickHandle1() {
             else if (tune[i + 2] != '+' && tune[i + 2] != '-') {
                 if (tune[i] != ' ') {
                     var a = (tune[i + 1] == '+' ? 14 : 0);
-                    console.log(a);
                     var n = dot.indexOf(tune[i++]) + a;
-                    console.log(n);
                     if (n >= a) {
                         playing(n);
                     }
@@ -60,27 +68,40 @@ function clickHandle1() {
     )
 }
 
-function clickHandle2() {
+function play2() {
     var tune = p;
     //console.log(tune);
-    //console.log("play");
+    console.log("play");
     //n=num,from 0
-    document.getElementById("myIn").value = "";
     var i = 0;
     timeCount = setInterval(
         function () {
             if (i > tune.length) clearInterval(timeCount);
             if (tune[i] != ' ') {
-                var n = kv.indexOf(tune[i++]);
-                if (n >= 0) {
-                    playing(n);
+                if (tune[i] == '(') {
+                    var m = 1;
+                    for (; tune[i + m] != ')'; m++) {
+                        playingN(tune[i + m]);
+                    }
+                    i = i + m + 1;
                 }
+                playingN(tune[i++]);
             }
             else {
                 i++;
             }
         }, t
     )
+}
+
+function clickHandle1() {
+    document.getElementById("myIn").value = "";
+    play1();
+}
+
+function clickHandle2() {
+    document.getElementById("myIn").value = "";
+    play2();
 }
 
 var sp = document.getElementById("speed");
@@ -132,18 +153,21 @@ function readTXT() {
     // var src = filePath + name + ".txt";
     // console.log("play");
     // console.log(src);
-    var inputFile = document.getElementById("upload").file[0];
 
+    var inputFile = document.getElementById("upload").files[0];
+    // console.log(inputFile);
     if (window.FileReader) {
-        var reader = new FileReader(inputFile);
-        reader.readAsText(f);
+        var reader = new FileReader();
+
         reader.onload = function () {
-            console.log("success");
+            // console.log("success");
         }
         reader.onloadend = function () {
             p = reader.result;
             console.log(p);
+            playMusic = true;
+            window.location.href = "./mypiano.html";
         }
-        // clickHandle2();
+        reader.readAsText(inputFile, "utf-8");
     }
 }

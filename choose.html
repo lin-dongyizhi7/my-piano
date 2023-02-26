@@ -26,7 +26,7 @@
         <button onclick="Search()">Search</button>
         <button onclick="clearSearch()">Clear</button>
         <button onclick="closeSearch()">Close</button>
-        <input id="upload" type="file" accept=".txt" style="position: relative;top:80%;height: 10%;">
+        <input id="upload" type="file" accept=".txt" style="position: relative;top:80%;height: 10%;width: 90%;" onchange="readTXT()">
     </div>
 
     <script>
@@ -60,7 +60,7 @@
             var toPlay = document.getElementById("toPlay");
             var name = toPlay.value;
             // console.log(name);
-            readTXT(name);
+            //readTXT(name);
             // window.location.href = "./mypiano.html";
         }
     </script>
