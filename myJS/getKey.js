@@ -93,11 +93,11 @@ function mouseClick(event) {
         if (m) {
             if (m.paused) {
                 m.play();
-                console.log("playing");
+                // console.log("playing");
             }
             else {
                 m.pause();
-                console.log("paused");
+                // console.log("paused");
             }
         }
     }

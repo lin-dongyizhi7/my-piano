@@ -15,6 +15,9 @@ var t = t0;
 var lTimes = 0;
 var rTimes = 0;
 var s = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8, 1, 1.25, 1.5, 1.75, 2, 3, 4, 5, 10, 16];//normal at pos 7
+var musics = [];
+var filePath = "../music/";
+
 
 function clickHandle1() {
     var tune = p;
@@ -113,10 +116,34 @@ function clickHandle6() {
     // console.log(music.volume);
 }
 
+function clickToReturn() {
+    window.location.href = "../choose.html";
+}
+
 function changeSpeed() {
     speed = s[7 + rTimes - lTimes];
     t = t0 / speed;
     //console.log(t);
     //console.log(speed);
     sp.innerText = speed.toString();
+}
+
+function readTXT() {
+    // var src = filePath + name + ".txt";
+    // console.log("play");
+    // console.log(src);
+    var inputFile = document.getElementById("upload").file[0];
+
+    if (window.FileReader) {
+        var reader = new FileReader(inputFile);
+        reader.readAsText(f);
+        reader.onload = function () {
+            console.log("success");
+        }
+        reader.onloadend = function () {
+            p = reader.result;
+            console.log(p);
+        }
+        // clickHandle2();
+    }
 }

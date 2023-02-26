@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>choices</title>
+    <link href="./myCSS/choose.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <script type="text/javascript" src="./myJS/autoplayer.js"></script>
+    <div id="myMenu" class="menu">
+        <ul>
+            <li id="c1">paly music</li>
+            <li id="c2">play oneself</li>
+            <li id="c3">exit</li>
+        </ul>
+    </div>
+    <div id="back" class="back">
+        <h1 style="font-size: 300px;color: rgb(160, 134, 212);margin-top: 20%;">QING</h1>
+    </div>
+    <div id="jump" class="hidden">
+        <input id="toPlay" type="text" placeholder="输入想要播放的曲目">
+        <button onclick="Search()">Search</button>
+        <button onclick="clearSearch()">Clear</button>
+        <button onclick="closeSearch()">Close</button>
+        <input id="upload" type="file" accept=".txt" style="position: relative;top:80%;height: 10%;">
+    </div>
+
+    <script>
+        var c1 = document.getElementById("c1");
+        var c2 = document.getElementById("c2");
+        var c3 = document.getElementById("c3");
+
+        c1.addEventListener("click", function () {
+            var jump = document.getElementById("jump");
+            jump.style.display = "block";
+
+        });
+        c2.addEventListener("click", function () {
+            window.location.href = "./mypiano.html";
+        })
+        c3.addEventListener("click", function () {
+            window.location.href = "./index.html";
+        })
+
+        function closeSearch() {
+            var jump = document.getElementById("jump");
+            jump.style.display = "none";
+        }
+
+        function clearSearch() {
+            var toPlay = document.getElementById("toPlay");
+            toPlay.value = "";
+        }
+
+        function Search() {
+            var toPlay = document.getElementById("toPlay");
+            var name = toPlay.value;
+            // console.log(name);
+            readTXT(name);
+            // window.location.href = "./mypiano.html";
+        }
+    </script>
+    <!-- <div class="changeBack">
+
+    </div> -->
+</body>
+
+</html>

@@ -18,7 +18,7 @@ body {
     top: 10px;
     width: 1680px;
     height: 800px;
-    background-image: url("./kq_qq.jpg");
+    background-image: url("../kq_qq.jpg");
     background-size: cover;
     opacity: 0.4;
     display: flex;
@@ -35,7 +35,7 @@ body {
     /* margin-top: 35%;         according to the width of father(whole) */
     position: relative;
     top: 74.6%;
-    left: -60%;
+    left: -63.3%;
     
     align-items: flex-end;
     justify-items: center;
@@ -90,8 +90,8 @@ body {
 
 .inputP {
     position: relative;
-    top: 3%;
-    left: 25%;
+    top: 2%;
+    left: 20%;
     height: 3%;
     justify-items: center;
     align-items: center;
@@ -120,6 +120,7 @@ button {
     width: 50px;
     margin-left: 5px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .speed {
