@@ -88,6 +88,19 @@ function mouseClick(event) {
     // console.log("click");
     // console.log(x);
     // console.log(y);
+    var m = document.getElementById("bailu");
+    if (y > 200) {
+        if (m) {
+            if (m.paused) {
+                m.play();
+                console.log("playing");
+            }
+            else {
+                m.pause();
+                console.log("paused");
+            }
+        }
+    }
     if (y > 150) {
         flag = 1;
     }

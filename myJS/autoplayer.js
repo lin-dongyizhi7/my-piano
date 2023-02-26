@@ -1,7 +1,7 @@
 var p;
 function getP(obj) {
     //obj.value = obj.value.replace(/[\W]/g, "");
-    obj.value = obj.value.replace(/[8-90kKlLiIoOpP`~!@#$%^&*()_=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）={}|《》？：“”【】、；‘'，。、]/g,"");
+    obj.value = obj.value.replace(/[8-90kKlLiIoOpP`~!@#$%^&*()_=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*（）={}|《》？：“”【】、；‘'，。、]/g, "");
     obj.value = obj.value.toLowerCase();
     p = obj.value;
 }
@@ -93,6 +93,24 @@ function clickHandle3() {
 function clickHandle4() {
     rTimes++;
     changeSpeed();
+}
+
+var music = document.getElementById("bailu");
+// console.log(music);
+
+function clickHandle5() {
+    if (music.volume <= 0.9) {
+        music.volume += 0.1;
+    }
+    music.volume = music.volume.toFixed(1);
+    // console.log(music.volume);
+}
+function clickHandle6() {
+    if (music.volume >= 0.1) {
+        music.volume -= 0.1;
+    }
+    music.volume = music.volume.toFixed(1);
+    // console.log(music.volume);
 }
 
 function changeSpeed() {
