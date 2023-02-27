@@ -10,7 +10,7 @@ var kv = "zxcvbnmasdfghjqwertyu1234567";
 var dot = "1234567";
 var timeCount;
 var speed = 1;
-var t0 = 500;
+var t0 = 750;
 var t = t0;
 var lTimes = 0;
 var rTimes = 0;
