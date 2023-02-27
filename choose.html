@@ -26,8 +26,13 @@
         <button onclick="Search()">Search</button>
         <button onclick="clearSearch()">Clear</button>
         <button onclick="closeSearch()">Close</button>
-        <input id="upload" type="file" accept=".txt" style="position: relative;top:80%;height: 10%;width: 90%;" onchange="readTXT()">
+        <input id="upload" type="file" accept=".txt" style="position: relative;top:80%;height: 10%;width: 90%;"
+            onchange="readTXT()">
     </div>
+    <div id="left-top" class="hidden-picture" style="top:4vw;left:10vw"><img src="./l-t.png" alt="1"></div>
+    <div id="right-top" class="hidden-picture" style="top:4vw;right:10vw"><img src="./r-t.png" alt="2"></div>
+    <div id="left-bottom" class="hidden-picture" style="bottom:4vw;left:10vw"><img src="./l-b.png" alt="3"></div>
+    <div id="right-bottom" class="hidden-picture" style="bottom:4vw;right:10vw"><img src="./r-b.png" alt="4"></div>
 
     <script>
         var c1 = document.getElementById("c1");
@@ -38,17 +43,86 @@
             var jump = document.getElementById("jump");
             jump.style.display = "block";
 
+            var menu = document.getElementById("myMenu");
+            menu.style.opacity = 0;
+
+            var lt = document.getElementById("left-top");
+            var rt = document.getElementById("right-top");
+            var lb = document.getElementById("left-bottom");
+            var rb = document.getElementById("right-bottom");
+            var back = document.getElementById("back");
+
+            var op = 0;
+            var bop = 0.3;
+            var x = 10;
+            var y = 4;
+            var sx, xy;
+            var t = setInterval(function () {
+                if (op < 0.6) {
+                    op += 0.03;
+                    lt.style.opacity = op;
+                    rt.style.opacity = op;
+                    lb.style.opacity = op;
+                    rb.style.opacity = op;
+                    bop -= 0.01;
+                    back.style.opacity = bop;
+
+                    x -= 0.2;
+                    sx = x + "vw";
+                    // console.log(sx);
+                    y -= 0.15;
+                    sy = y + "vw";
+
+                    lt.style.left = sx;
+                    lt.style.top = sy;
+                    rt.style.right = sx;
+                    rt.style.top = sy;
+                    lb.style.left = sx;
+                    lb.style.bottom = sy;
+                    rb.style.right = sx;
+                    rb.style.bottom = sy;
+                }
+                else {
+                    clearInterval(t);
+                }
+            }, 20)
         });
         c2.addEventListener("click", function () {
             window.location.href = "./mypiano.html";
-        })
+        });
         c3.addEventListener("click", function () {
             window.location.href = "./index.html";
-        })
+        });
 
         function closeSearch() {
             var jump = document.getElementById("jump");
             jump.style.display = "none";
+
+            var menu = document.getElementById("myMenu");
+            menu.style.opacity = 1;
+
+            var lt = document.getElementById("left-top");
+            var rt = document.getElementById("right-top");
+            var lb = document.getElementById("left-bottom");
+            var rb = document.getElementById("right-bottom");
+            var back = document.getElementById("back");
+
+            var op = 0.6;
+            var bop = 0.1;
+            var t = setInterval(function () {
+                if (op > 0) {
+                    op -= 0.03;
+                    lt.style.opacity = op;
+                    rt.style.opacity = op;
+                    lb.style.opacity = op;
+                    rb.style.opacity = op;
+                    bop += 0.01;
+                    back.style.opacity = bop;
+                }
+                else {
+                    clearInterval(t);
+                }
+            }, 20)
         }
 
         function clearSearch() {

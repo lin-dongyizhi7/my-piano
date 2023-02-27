@@ -19,9 +19,9 @@ var musics = [];
 var filePath = "../music/";
 var playMusic = false;
 
-if (playMusic == true) {
-    play2();
-}
+// if (playMusic == true) {
+//     play2();
+// }
 
 function playingN(c) {
     var n = kv.indexOf(c);
@@ -166,7 +166,8 @@ function readTXT() {
             p = reader.result;
             console.log(p);
             playMusic = true;
-            window.location.href = "./mypiano.html";
+            // window.open(`../mypiano.html?${p}${playMusic}`);
+            window.location.href = "../mypiano.html";
         }
         reader.readAsText(inputFile, "utf-8");
     }
