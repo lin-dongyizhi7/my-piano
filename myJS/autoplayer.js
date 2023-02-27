@@ -62,7 +62,7 @@ function play1() {
                 }
             }
             else {
-                i++;
+                i += 3;
             }
         }, t
     )

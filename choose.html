@@ -11,6 +11,7 @@
 
 <body>
     <script type="text/javascript" src="./myJS/autoplayer.js"></script>
+    <script type="text/script" src="./myJS/musics.js"></script>
     <div id="myMenu" class="menu">
         <ul>
             <li id="c1">paly music</li>
@@ -22,7 +23,7 @@
         <h1 style="font-size: 300px;color: rgb(160, 134, 212);margin-top: 20%;">QING</h1>
     </div>
     <div id="jump" class="hidden">
-        <input id="toPlay" type="text" placeholder="输入想要播放的曲目">
+        <input id="toPlay" type="text" placeholder="输入想要播放的曲目" oninput="searchLike(this)">
         <button onclick="Search()">Search</button>
         <button onclick="clearSearch()">Clear</button>
         <button onclick="closeSearch()">Close</button>
