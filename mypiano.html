@@ -7,30 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>lin dong yi zhi 's piano</title>
     <link rel="stylesheet" href="./myCSS/mycss.css">
-    
 </head>
 
 <body>
     <script type="text/javascript" src="./myJS/d.js"></script>
-    <header>
-        
-    </header>
+    <!-- <div class="begin"></div> -->
     <canvas id="cw"></canvas>
 
-    <audio id="bailu" loop="loop" ><source src="./audios/kamisato.mp3" type="audio/mp3"></audio>
+    <audio id="bailu" loop="loop">
+        <source src="./audios/kamisato.mp3" type="audio/mp3">
+    </audio>
     <!-- <div style="margin-left: 390px;background-color: rgb(57, 201, 22);width: 200px;height: 800px;position: fixed;"></div> -->
     <div id="cl" class="whole">
+        <script>
+            var box = document.getElementById("cl");
+            var op = 0;
+            var t = setInterval(function () {
+                if (op < 0.4) {
+                    op += 0.05;
+                    cl.style.opacity = op;
+                }
+                else {
+                    clearInterval(t);
+                }
+            }, 100);
+        </script>
         <!-- - -->
         <div class="inputP">
-            <input id="myIn" type="text" placeholder="如果需要，请输入简谱(数字+-或者键盘位置)，分别使用play1和play2："  onfocus="myFocus()"  oninput="getP(this)" />
-            <button id="b1" onClick="clickHandle1()" >play1</button>
-            <button id="b2" onClick="clickHandle2()" >play2</button>
-            <button id="b3" onClick="clickHandle3()" >&lt&lt</button>
+            <input id="myIn" type="text" placeholder="如果需要，请输入简谱(数字+-或者键盘位置)，分别使用play1和play2：" onfocus="myFocus()"
+                oninput="getP(this)" />
+            <button id="b1" onClick="clickHandle1()">play1</button>
+            <button id="b2" onClick="clickHandle2()">play2</button>
+            <button id="b3" onClick="clickHandle3()">&lt&lt</button>
             <div id="speed" class="speed">1</div>
-            <button id="b4" onClick="clickHandle4()" >&gt&gt</button>
-            <button id="b5" onClick="clickHandle5()" >+</button>
-            <button id="b6" onClick="clickHandle6()" >-</button>
-            <button id="return" onclick="clickToReturn()" >return</button>
+            <button id="b4" onClick="clickHandle4()">&gt&gt</button>
+            <button id="b5" onClick="clickHandle5()">+</button>
+            <button id="b6" onClick="clickHandle6()">-</button>
+            <button id="return" onclick="clickToReturn()">return</button>
         </div>
         <div id="main" class="keyBoard">
             <div class="whiteB">

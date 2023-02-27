@@ -47,6 +47,29 @@
             var menu = document.getElementById("myMenu");
             menu.style.opacity = 0;
 
+            dyOpen();
+        });
+        c2.addEventListener("click", function () {
+            dyOpen();
+            var delay=setTimeout(function(){
+                window.location.href = "./mypiano.html";
+            },600);
+        });
+        c3.addEventListener("click", function () {
+            window.location.href = "./index.html";
+        });
+
+        function closeSearch() {
+            var jump = document.getElementById("jump");
+            jump.style.display = "none";
+
+            var menu = document.getElementById("myMenu");
+            menu.style.opacity = 1;
+
+            dyClose();
+        }
+
+        function dyOpen() {
             var lt = document.getElementById("left-top");
             var rt = document.getElementById("right-top");
             var lb = document.getElementById("left-bottom");
@@ -86,22 +109,9 @@
                 else {
                     clearInterval(t);
                 }
-            }, 20)
-        });
-        c2.addEventListener("click", function () {
-            window.location.href = "./mypiano.html";
-        });
-        c3.addEventListener("click", function () {
-            window.location.href = "./index.html";
-        });
-
-        function closeSearch() {
-            var jump = document.getElementById("jump");
-            jump.style.display = "none";
-
-            var menu = document.getElementById("myMenu");
-            menu.style.opacity = 1;
-
+            }, 30)
+        }
+        function dyClose() {
             var lt = document.getElementById("left-top");
             var rt = document.getElementById("right-top");
             var lb = document.getElementById("left-bottom");
@@ -110,6 +120,8 @@
 
             var op = 0.6;
             var bop = 0.1;
+            var x = 7;
+            var y = 1;
             var t = setInterval(function () {
                 if (op > 0) {
                     op -= 0.03;
@@ -119,11 +131,25 @@
                     rb.style.opacity = op;
                     bop += 0.01;
                     back.style.opacity = bop;
+
+                    x += 0.2;
+                    sx = x + "vw";
+                    y += 0.15;
+                    sy = y + "vw";
+
+                    lt.style.left = sx;
+                    lt.style.top = sy;
+                    rt.style.right = sx;
+                    rt.style.top = sy;
+                    lb.style.left = sx;
+                    lb.style.bottom = sy;
+                    rb.style.right = sx;
+                    rb.style.bottom = sy;
                 }
                 else {
                     clearInterval(t);
                 }
-            }, 20)
+            }, 30)
         }
 
         function clearSearch() {
