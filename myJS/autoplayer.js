@@ -1,6 +1,12 @@
+let value = window.location.search;
+value = value.split('?')[1];
+value = value.replace(/[%20]/g," ");
+// console.log(value);
+
 var p;
+if(value) p = value;
+
 function getP(obj) {
-    //obj.value = obj.value.replace(/[\W]/g, "");
     obj.value = obj.value.replace(/[8-90kKlLiIoOpP`~!@#$%^&*_=<>?:"{}|,.\/;'\\[\]·~！@#￥%……&*={}|《》？：“”【】、；‘'，。、]/g, "");
     obj.value = obj.value.toLowerCase();
     p = obj.value;
@@ -17,13 +23,9 @@ var rTimes = 0;
 var s = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8, 1, 1.25, 1.5, 1.75, 2, 3, 4, 5, 10, 16];//normal at pos 7
 var musics = [];
 var filePath = "../music/";
-var playMusic = false;
-
-// if (playMusic == true) {
-//     play2();
-// }
 
 function playingN(c) {
+    console.log(c);
     var n = kv.indexOf(c);
     if (n >= 0) {
         playing(n);
@@ -70,9 +72,8 @@ function play1() {
 
 function play2() {
     var tune = p;
-    //console.log(tune);
-    console.log("play");
-    //n=num,from 0
+    console.log(tune);
+    // console.log("play");
     var i = 0;
     timeCount = setInterval(
         function () {
@@ -147,28 +148,4 @@ function changeSpeed() {
     //console.log(t);
     //console.log(speed);
     sp.innerText = speed.toString();
-}
-
-function readTXT() {
-    // var src = filePath + name + ".txt";
-    // console.log("play");
-    // console.log(src);
-
-    var inputFile = document.getElementById("upload").files[0];
-    // console.log(inputFile);
-    if (window.FileReader) {
-        var reader = new FileReader();
-
-        reader.onload = function () {
-            // console.log("success");
-        }
-        reader.onloadend = function () {
-            p = reader.result;
-            console.log(p);
-            playMusic = true;
-            // window.open(`../mypiano.html?${p}${playMusic}`);
-            window.location.href = "../mypiano.html";
-        }
-        reader.readAsText(inputFile, "utf-8");
-    }
 }

@@ -1,0 +1,15 @@
+"filename", "language", "Markdown", "HTML", "JavaScript", "CSS", "comment", "blank", "total"
+"d:\my-learn\web\README.md", "Markdown", 33, 0, 0, 0, 0, 29, 62
+"d:\my-learn\web\SECURITY.md", "Markdown", 15, 0, 0, 0, 0, 7, 22
+"d:\my-learn\web\choose.html", "HTML", 0, 151, 0, 0, 3, 19, 173
+"d:\my-learn\web\index.html", "HTML", 0, 282, 0, 0, 0, 97, 379
+"d:\my-learn\web\myCSS\choose.css", "CSS", 0, 0, 0, 100, 3, 11, 114
+"d:\my-learn\web\myCSS\index.css", "CSS", 0, 0, 0, 181, 0, 38, 219
+"d:\my-learn\web\myCSS\mycss.css", "CSS", 0, 0, 0, 109, 23, 16, 148
+"d:\my-learn\web\myJS\autoplayer.js", "JavaScript", 0, 0, 135, 0, 21, 18, 174
+"d:\my-learn\web\myJS\d.js", "JavaScript", 0, 0, 85, 0, 1, 5, 91
+"d:\my-learn\web\myJS\getKey.js", "JavaScript", 0, 0, 83, 0, 18, 11, 112
+"d:\my-learn\web\myJS\index.js", "JavaScript", 0, 0, 39, 0, 0, 2, 41
+"d:\my-learn\web\myJS\musics.js", "JavaScript", 0, 0, 11, 0, 0, 2, 13
+"d:\my-learn\web\mypiano.html", "HTML", 0, 192, 0, 0, 6, 4, 202
+"Total", "-", 48, 625, 353, 390, 75, 259, 1750

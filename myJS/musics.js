@@ -3,8 +3,8 @@ var name_musics={
     "白鹭归庭":1,
 }
 
-function searchLike(this){
-    var name = this.value;
+function searchLike(obj){
+    var name = obj.value;
     for(var i in name_musics){
         if(name_musics[i].key.index(name)>=0){
             
